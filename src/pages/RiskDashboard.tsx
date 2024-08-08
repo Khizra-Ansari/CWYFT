@@ -3,6 +3,7 @@ import { useCallback, useState } from 'react';
 import { HiOutlineAdjustmentsVertical } from 'react-icons/hi2';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IoDownloadOutline, IoSearchOutline } from 'react-icons/io5';
+import { FaGreaterThan, FaLessThan } from 'react-icons/fa6';
 import { IoIosArrowDropright } from 'react-icons/io';
 import { LuClock8 } from 'react-icons/lu';
 import { FaUser } from 'react-icons/fa';
@@ -97,7 +98,7 @@ const RiskDashboard: React.FC = () => {
       <div className="mt-4 grid grid-cols-12 gap-4">
         {/* First container - col-span-3 */}
         <div className="col-span-12 lg:col-span-3">
-          <div className="col-span-12 rounded-sm border border-stroke bg-white dark:bg-boxdark px-4 sm:px-6 lg:px-8 pt-7.5 pb-5 shadow-default dark:border-strokedark h-[450px] sm:h-[550px] lg:h-[650px] relative">
+          <div className="col-span-12 rounded-sm border border-stroke bg-white dark:bg-boxdark px-4 sm:px-6 lg:px-8 pt-7.5 pb-5 shadow-default dark:border-strokedark h-[500px] sm:h-[600px] lg:h-[700px] relative">
             <div className="flex items-center col-span-12 h-[42px] w-full bg-black rounded-lg cursor-pointer absolute top-0 left-0 right-0">
               <HiOutlineAdjustmentsVertical className="text-white ml-2" />
               <span className="ml-10 text-white font-[300] text-[16px] text-opacity-90">
@@ -165,7 +166,7 @@ const RiskDashboard: React.FC = () => {
 
         {/* Second container - col-span-9 */}
         <div className="col-span-12 lg:col-span-9">
-          <div className="col-span-12 rounded-sm border border-stroke bg-white dark:bg-boxdark px-4 sm:px-6 lg:px-8 pt-7.5 pb-5 shadow-default dark:border-strokedark h-[450px] sm:h-[550px] lg:h-[700px] relative">
+          <div className="col-span-12 rounded-sm border border-stroke bg-white dark:bg-boxdark px-4 sm:px-6 lg:px-8 pt-7.5 pb-5 shadow-default dark:border-strokedark h-[500px] sm:h-[600px] lg:h-[700px] relative">
             <div className="absolute top-0 left-0 right-0 flex items-center h-10 py-[22px] w-full gap-2 bg-black rounded-lg">
               <div className="flex items-center ml-4">
                 <label className="custom-checkbox-container text-white cursor-pointer flex items-center font-normal text-sm">
@@ -207,7 +208,7 @@ const RiskDashboard: React.FC = () => {
                   <IoIosArrowDropright className="mt-2" />
                   <div className="flex flex-col gap-[4px] mt-3 ml-2 w-full">
                     <span className=" font-semibold pb-1">
-                      Weak Authentication
+                      Unauthorised System Access
                     </span>
                     <div className="flex gap-[6px]">
                       <div className="h-5 w-16 rounded-lg bg-red-400 relative">
@@ -228,7 +229,7 @@ const RiskDashboard: React.FC = () => {
                     </div>
                   </div>
                 </div>
-                <div className="flex items-center gap-8 ml-24">
+                <div className="flex items-center gap-8 ml-22">
                   <div className="flex items-center justify-center border-2 h-5 rounded-md text-sm border-yellow-400 w-7 text-yellow-400">
                     15
                   </div>
@@ -311,7 +312,7 @@ const RiskDashboard: React.FC = () => {
                   <IoIosArrowDropright className="mt-2" />
                   <div className="flex flex-col gap-[4px] mt-3 ml-2 w-full">
                     <span className=" font-semibold pb-1">
-                      Weak Authentication
+                      Critical Svstem Dependencies
                     </span>
                     <div className="flex gap-[6px]">
                       <div className="h-5 w-16 rounded-lg bg-red-400 relative">
@@ -332,7 +333,7 @@ const RiskDashboard: React.FC = () => {
                     </div>
                   </div>
                 </div>
-                <div className="flex items-center gap-8 ml-24">
+                <div className="flex items-center gap-8 ml-20">
                   <div className="flex items-center justify-center border-2 h-5 rounded-md text-sm border-yellow-400 w-7 text-yellow-400">
                     15
                   </div>
@@ -341,7 +342,7 @@ const RiskDashboard: React.FC = () => {
                   </div>
                   <div className="flex gap-2 items-center justify-center border-2 h-7 rounded-md text-sm border-red-400 w-24 text-red-400 mr-4">
                     <div className="h-3 w-3 rounded-full bg-red-400"></div>
-                    <span>Transfer</span>
+                    <span>Accept</span>
                   </div>
                   <div className="text-green-500 cursor-pointer">
                     <FaUser />
@@ -363,7 +364,7 @@ const RiskDashboard: React.FC = () => {
                   <IoIosArrowDropright className="mt-2" />
                   <div className="flex flex-col gap-[4px] mt-3 ml-2 w-full">
                     <span className=" font-semibold pb-1">
-                      Weak Authentication
+                      Exposure - Zero-day Attack
                     </span>
                     <div className="flex gap-[6px]">
                       <div className="h-5 w-16 rounded-lg bg-red-400 relative">
@@ -393,7 +394,7 @@ const RiskDashboard: React.FC = () => {
                   </div>
                   <div className="flex gap-2 items-center justify-center border-2 h-7 rounded-md text-sm border-red-400 w-24 text-red-400 mr-4">
                     <div className="h-3 w-3 rounded-full bg-red-400"></div>
-                    <span>Transfer</span>
+                    <span>Mitigate</span>
                   </div>
                   <div className="text-green-500 cursor-pointer">
                     <FaUser />
@@ -415,7 +416,7 @@ const RiskDashboard: React.FC = () => {
                   <IoIosArrowDropright className="mt-2" />
                   <div className="flex flex-col gap-[4px] mt-3 ml-2 w-full">
                     <span className=" font-semibold pb-1">
-                      Weak Authentication
+                      Physical Security - Theft
                     </span>
                     <div className="flex gap-[6px]">
                       <div className="h-5 w-16 rounded-lg bg-red-400 relative">
@@ -467,7 +468,7 @@ const RiskDashboard: React.FC = () => {
                   <IoIosArrowDropright className="mt-2" />
                   <div className="flex flex-col gap-[4px] mt-3 ml-2 w-full">
                     <span className=" font-semibold pb-1">
-                      Weak Authentication
+                      Risky Software Supply Chain
                     </span>
                     <div className="flex gap-[6px]">
                       <div className="h-5 w-16 rounded-lg bg-red-400 relative">
@@ -488,7 +489,7 @@ const RiskDashboard: React.FC = () => {
                     </div>
                   </div>
                 </div>
-                <div className="flex items-center gap-8 ml-24">
+                <div className="flex items-center gap-8 ml-22">
                   <div className="flex items-center justify-center border-2 h-5 rounded-md text-sm border-yellow-400 w-7 text-yellow-400">
                     15
                   </div>
@@ -502,6 +503,45 @@ const RiskDashboard: React.FC = () => {
                   <div className="text-green-500 cursor-pointer">
                     <FaUser />
                   </div>
+                </div>
+              </div>
+            </div>
+            <div className="absolute top-100 right-0 mt-60 w-full flex items-center justify-between">
+              {/* Left-aligned "8/page" */}
+              <div className="h-3 w-5 ml-10 rounded-lg text-gray-400 bg-white text-[12px] text-center flex items-center justify-center cursor-pointer">
+                <span>8/page</span>
+              </div>
+
+              {/* Right-aligned pagination controls */}
+              <div className="flex gap-1 mr-8">
+                <div className="h-3 w-5 rounded-md bg-white text-[10px] flex items-center justify-center cursor-pointer">
+                  <FaLessThan className="ml-1" />
+                  <FaLessThan className="mr-[6px]" />
+                </div>
+                <div className="h-3 w-5 rounded-md bg-white text-[10px] flex items-center justify-center cursor-pointer">
+                  <FaLessThan />
+                </div>
+                <div className="h-3 w-5 rounded-md bg-white cursor-pointer text-[10px] flex items-center justify-center bg-gray-900">
+                  1
+                </div>
+                <div className="h-3 w-5 rounded-md bg-white text-[10px] flex items-center justify-center cursor-pointer">
+                  2
+                </div>
+                <div className="h-3 w-5 rounded-md bg-white text-[10px] flex items-center justify-center cursor-pointer">
+                  3
+                </div>
+                <div className="h-3 w-5 rounded-md bg-white text-[22px] flex items-center justify-center cursor-pointer">
+                  ...
+                </div>
+                <div className="h-3 w-5 rounded-md bg-white text-[10px] flex items-center justify-center cursor-pointer">
+                  10
+                </div>
+                <div className="h-3 w-5 rounded-md bg-white text-[10px] flex items-center justify-center cursor-pointer">
+                  <FaGreaterThan />
+                </div>
+                <div className="h-3 w-5 rounded-md bg-white text-[10px] flex items-center justify-center cursor-pointer">
+                  <FaGreaterThan className="ml-1" />
+                  <FaGreaterThan className="mr-[6px]" />
                 </div>
               </div>
             </div>
