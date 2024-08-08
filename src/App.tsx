@@ -17,6 +17,7 @@ import Alerts from './pages/UiElements/Alerts';
 import Buttons from './pages/UiElements/Buttons';
 import DefaultLayout from './layout/DefaultLayout';
 import RiskRegistry from './pages/RiskRegistry';
+import RiskDashboard from './pages/RiskDashboard';
 import RiskMap from './pages/RiskMap';
 
 function App() {
@@ -61,6 +62,16 @@ function App() {
             <>
               <PageTitle title="RiskMap" />
               <RiskMap />
+            </>
+          }
+        />
+
+        <Route
+          path="/Risk/Dashboard"
+          element={
+            <>
+              <PageTitle title="RiskDashboard" />
+              <RiskDashboard />
             </>
           }
         />
