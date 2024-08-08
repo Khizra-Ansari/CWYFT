@@ -1,4 +1,3 @@
-import React from 'react';
 import { MdOutlineFileDownload } from 'react-icons/md';
 
 const RiskAssessmentCard = () => {
