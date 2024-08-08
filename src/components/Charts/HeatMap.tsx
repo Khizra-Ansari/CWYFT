@@ -1,8 +1,8 @@
-import React from 'react';
 import ReactApexChart from 'react-apexcharts';
+import { ApexOptions } from 'apexcharts';
 
 const HeatMap = () => {
-  const options = {
+  const options: ApexOptions = {
     chart: {
       type: 'heatmap',
       toolbar: {
@@ -49,10 +49,12 @@ const HeatMap = () => {
       categories: ['1', '2', '3', '4', '5'],
     },
     yaxis: {
-      categories: ['1', '2', '3', '4', '5'],
+      labels: {
+        formatter: (value: number) => value.toString(),
+      },
     },
     title: {
-      //   text: 'Risk Heatmap',
+      text: 'Risk Heatmap',
       align: 'center',
       style: {
         fontSize: '20px',
