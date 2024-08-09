@@ -1,4 +1,5 @@
 import React from 'react';
+import CustomNode from '../components/Charts/CustomNodes';
 
 import ReactFlow, {
   MiniMap,
@@ -15,15 +16,19 @@ import {
   faCubes,
 } from '@fortawesome/free-solid-svg-icons';
 
+const nodeTypes = {
+  customNode: CustomNode,
+};
+
 // Define the nodes and edges for the flow diagram
 const nodes = [
   // Main Box
   {
     id: 'main-box',
-    type: 'default',
+    type: 'customNode',
     data: {
       label: (
-        <div>
+        <div className="text-left bg-white">
           <h2 className="text-lg font-bold">RM-51 - Malicious Insider</h2>
           <div className="flex justify-between mb-4">
             <div className="text-center">
@@ -62,29 +67,29 @@ const nodes = [
             <h3 className="font-bold mb-1">Vulnerabilities</h3>
             <ul className="list-disc list-inside text-sm">
               <li>Weak Authentication</li>
-              <li>Unauthorised Access to Critical Assets</li>
+              <li>Unauthorized Access to Critical Assets</li>
             </ul>
           </div>
           <hr className="my-3 border-gray-400" />
           <div>
             <h3 className="font-bold mb-1">Severity</h3>
             <div className="flex items-center">
-              <span className="ml-25">Critical</span>
-              <div className="w-4 h-4 ml-5 bg-red-500 rounded-full"></div>
+              <span className="">Critical</span>
+              <div className="w-4 h-4 ml-2 bg-red-500 rounded-full"></div>
             </div>
           </div>
         </div>
       ),
     },
-    position: { x: 50, y: 50 },
+    position: { x: 1, y: 50 },
     style: { width: 300, padding: 10, border: '1px solid #ddd' },
   },
-
   // First Set of Smaller Boxes
   {
     id: 'cyid-115',
+    type: 'customNode',
     data: { label: 'CyID-115 : MFA' },
-    position: { x: 400, y: 50 },
+    position: { x: 400, y: 150 }, // Adjusted y position for spacing
     style: {
       width: 150,
       height: 50,
@@ -95,8 +100,9 @@ const nodes = [
   },
   {
     id: 'cyid-198',
+    type: 'customNode',
     data: { label: 'CyID-198 : SSO' },
-    position: { x: 400, y: 150 },
+    position: { x: 400, y: 250 }, // Adjusted y position for spacing
     style: {
       width: 150,
       height: 50,
@@ -107,8 +113,9 @@ const nodes = [
   },
   {
     id: 'cyid-50',
+    type: 'customNode',
     data: { label: 'CyID-50 : PAM' },
-    position: { x: 400, y: 250 },
+    position: { x: 400, y: 350 }, // Adjusted y position for spacing
     style: {
       width: 150,
       height: 50,
@@ -121,8 +128,9 @@ const nodes = [
   // Second Set of Smaller Boxes
   {
     id: 'infra',
+    type: 'customNode',
     data: { label: 'Infrastructure' },
-    position: { x: 600, y: 50 },
+    position: { x: 600, y: 150 }, // Adjusted y position for spacing
     style: {
       width: 150,
       height: 50,
@@ -133,8 +141,9 @@ const nodes = [
   },
   {
     id: 'cloud',
+    type: 'customNode',
     data: { label: 'Cloud' },
-    position: { x: 600, y: 150 },
+    position: { x: 600, y: 250 }, // Adjusted y position for spacing
     style: {
       width: 150,
       height: 50,
@@ -145,8 +154,9 @@ const nodes = [
   },
   {
     id: 'version-control',
+    type: 'customNode',
     data: { label: 'Version Control' },
-    position: { x: 600, y: 250 },
+    position: { x: 600, y: 350 }, // Adjusted y position for spacing
     style: {
       width: 150,
       height: 50,
@@ -156,11 +166,12 @@ const nodes = [
     },
   },
 
-  // Third Set of Smaller Boxes
+  // First Set of Nodes
   {
     id: 'vmware',
+    type: 'customNode',
     data: { label: 'VMware' },
-    position: { x: 800, y: 50 },
+    position: { x: 900, y: 50 }, // Adjusted y position for spacing
     style: {
       width: 100,
       height: 50,
@@ -170,8 +181,9 @@ const nodes = [
   },
   {
     id: 'aws',
+    type: 'customNode',
     data: { label: 'AWS' },
-    position: { x: 800, y: 150 },
+    position: { x: 900, y: 150 }, // Adjusted y position for spacing
     style: {
       width: 100,
       height: 50,
@@ -181,8 +193,9 @@ const nodes = [
   },
   {
     id: 'cisco',
+    type: 'customNode',
     data: { label: 'Cisco' },
-    position: { x: 800, y: 250 },
+    position: { x: 900, y: 250 }, // Adjusted y position for spacing
     style: {
       width: 100,
       height: 50,
@@ -192,8 +205,9 @@ const nodes = [
   },
   {
     id: 'f5',
+    type: 'customNode',
     data: { label: 'F5' },
-    position: { x: 800, y: 350 },
+    position: { x: 900, y: 350 }, // Adjusted y position for spacing
     style: {
       width: 100,
       height: 50,
@@ -203,8 +217,9 @@ const nodes = [
   },
   {
     id: 'salesforce',
+    type: 'customNode',
     data: { label: 'Salesforce' },
-    position: { x: 800, y: 450 },
+    position: { x: 900, y: 450 }, // Adjusted y position for spacing
     style: {
       width: 100,
       height: 50,
@@ -214,8 +229,9 @@ const nodes = [
   },
   {
     id: 'azure',
+    type: 'customNode',
     data: { label: 'Azure' },
-    position: { x: 800, y: 550 },
+    position: { x: 900, y: 550 }, // Adjusted y position for spacing
     style: {
       width: 100,
       height: 50,
@@ -223,10 +239,13 @@ const nodes = [
       border: '1px solid #ddd',
     },
   },
+
+  // Second Set of Nodes
   {
     id: 'fortinet',
+    type: 'customNode',
     data: { label: 'Fortinet' },
-    position: { x: 900, y: 50 },
+    position: { x: 900, y: 650 }, // Adjusted y position for spacing
     style: {
       width: 100,
       height: 50,
@@ -236,8 +255,9 @@ const nodes = [
   },
   {
     id: 'palo-alto',
+    type: 'customNode',
     data: { label: 'Palo Alto' },
-    position: { x: 900, y: 150 },
+    position: { x: 900, y: 750 }, // Adjusted y position for spacing
     style: {
       width: 100,
       height: 50,
@@ -247,8 +267,9 @@ const nodes = [
   },
   {
     id: 'okta',
+    type: 'customNode',
     data: { label: 'Okta' },
-    position: { x: 900, y: 250 },
+    position: { x: 900, y: 850 }, // Adjusted y position for spacing
     style: {
       width: 100,
       height: 50,
@@ -258,8 +279,9 @@ const nodes = [
   },
   {
     id: 'atlassian',
+    type: 'customNode',
     data: { label: 'Atlassian' },
-    position: { x: 900, y: 350 },
+    position: { x: 900, y: 950 }, // Adjusted y position for spacing
     style: {
       width: 100,
       height: 50,
@@ -589,24 +611,30 @@ const RiskMap: React.FC = () => {
         <h1 className="font-bold text-xl">Risk Map</h1>
       </div>
 
-      <div className="flex space-x-4">
-        <div className="flex items-center bg-gray-200 rounded-md px-3 py-2 bg-white mt-4 dark:bg-boxdark">
+      <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
+        <div className="flex items-center bg-gray-200 rounded-md px-3 py-2 bg-white dark:bg-boxdark flex-1">
           <FontAwesomeIcon
             icon={faTriangleExclamation}
             className="w-4 h-4 mr-2"
           />
-          <span className="font-medium mr-2">Breach Risk</span>
-          <span className="font-bold">USD 150M</span>
+          <div className="text-sm sm:text-base">
+            <span className="font-medium mr-2">Breach Risk</span>
+            <span className="font-bold">USD 150M</span>
+          </div>
         </div>
-        <div className="flex items-center bg-gray-200 rounded-md px-3 py-2 bg-white mt-4 dark:bg-boxdark">
+        <div className="flex items-center bg-gray-200 rounded-md px-3 py-2 bg-white dark:bg-boxdark flex-1">
           <FontAwesomeIcon icon={faClock} className="w-6 h-4 mr-2" />
-          <span className="font-medium mr-2">Probability</span>
-          <span className="font-bold">67%</span>
+          <div className="text-sm sm:text-base">
+            <span className="font-medium mr-2">Probability</span>
+            <span className="font-bold">67%</span>
+          </div>
         </div>
-        <div className="flex items-center bg-gray-200 rounded-md px-3 py-2 bg-white mt-4 dark:bg-boxdark">
+        <div className="flex items-center bg-gray-200 rounded-md px-3 py-2 bg-white dark:bg-boxdark flex-1">
           <FontAwesomeIcon icon={faCubes} className="w-4 h-4 mr-2" />
-          <span className="font-medium mr-2">Analysed Assets</span>
-          <span className="font-bold">67k</span>
+          <div className="text-sm sm:text-base">
+            <span className="font-medium mr-2">Analysed Assets</span>
+            <span className="font-bold">67k</span>
+          </div>
         </div>
       </div>
 
@@ -623,10 +651,11 @@ const RiskMap: React.FC = () => {
         </select>
       </div>
 
-      <div className="mt-4" style={{ height: '600px' }}>
+      <div className="mt-8" style={{ height: '600px' }}>
         <ReactFlow
           nodes={nodes}
           edges={edges}
+          nodeTypes={nodeTypes}
           fitView
           style={{ width: '100%', height: '100%' }}
         >
