@@ -156,9 +156,9 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                     return (
                       <React.Fragment>
                         <NavLink
-                          to="#"
+                          to=""
                           className={`group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
-                            (pathname === '/' ||
+                            (pathname === '' ||
                               pathname.includes('dashboard')) &&
                             'bg-graydark dark:bg-meta-4'
                           }`}
@@ -207,10 +207,9 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                 {/* <!-- Menu Item Calendar --> */}
                 <li>
                   <NavLink
-                    to="/calendar"
+                    to="#"
                     className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
-                      pathname.includes('calendar') &&
-                      'bg-graydark dark:bg-meta-4'
+                      pathname.includes('#') && 'bg-graydark dark:bg-meta-4'
                     }`}
                   >
                     <img
@@ -228,17 +227,16 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
 
                 <li>
                   <NavLink
-                    to="/profile"
+                    to="/"
                     className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
-                      pathname.includes('profile') &&
-                      'bg-graydark dark:bg-meta-4'
+                      pathname.includes('/') && 'bg-graydark dark:bg-meta-4'
                     }`}
                   >
-                    <div className="flex items-center gap-2 ml-2 mt-2 cursor-pointer">
-                      <RiFileList2Fill className=" text-green-400" />
-                      <span className=" text-green-400 text-sm font-normal">
-                        Controls Library
-                      </span>
+                    <div className="flex items-center gap-2 ml-2 mt-2 cursor-pointer  hover:text-green-400">
+                      <RiFileList2Fill className=" " />
+                      <a href="/" className="  text-sm font-normal">
+                        Control Library
+                      </a>
                     </div>
                   </NavLink>
                 </li>
@@ -251,8 +249,11 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                     }`}
                   >
                     <div className="flex items-center gap-2 ml-2 mt-2 text-gray-200 hover:text-green-400">
-                      <LuFramer className=" " />
-                      <a href="#" className="  text-sm font-normal">
+                      <LuFramer className=" font-[900] text-[16px]" />
+                      <a
+                        href="#"
+                        className="text-sm font-normal flex flex-nowrap"
+                      >
                         Frameworks
                       </a>
                     </div>
@@ -266,9 +267,12 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                       pathname.includes('#') && 'bg-graydark dark:bg-meta-4'
                     }`}
                   >
-                    <div className="flex items-center text-sm gap-2 ml-2 mt-2 text-gray-200 hover:text-green-400">
-                      <RiBookLine className=" " />
-                      <a href="#" className="   font-normal">
+                    <div className="flex items-center gap-2 ml-2 mt-2 text-gray-200 hover:text-green-400">
+                      <RiBookLine className=" font-[900] text-[16px]" />
+                      <a
+                        href="#"
+                        className="text-sm font-normal flex flex-nowrap"
+                      >
                         Evidence Pool
                       </a>
                     </div>
@@ -300,26 +304,24 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
 
                 <li>
                   <NavLink
-                    to=""
+                    to=".\Risk\Dashboard"
                     className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
-                      pathname.includes('#') && 'bg-graydark dark:bg-meta-4'
+                      pathname.includes('RiskDashboard') &&
+                      'bg-graydark dark:bg-meta-4'
                     }`}
                   >
                     <div className="flex items-center gap-2 ml-2 mt-2 text-gray-200 hover:text-green-400">
                       <MdInfoOutline className=" font-[900] text-[16px]" />
-                      <a
-                        href="#"
-                        className="  text-sm font-normal flex flex-nowrap"
-                      >
+                      <span className="  text-sm font-normal flex flex-nowrap">
                         Risk Dashboard
-                      </a>
+                      </span>
                     </div>
                   </NavLink>
                 </li>
 
                 <li>
                   <NavLink
-                    to=""
+                    to=".\"
                     className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
                       pathname.includes('#') && 'bg-graydark dark:bg-meta-4'
                     }`}
@@ -335,9 +337,10 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
 
                 <li>
                   <NavLink
-                    to=""
+                    to=".\Risk\Map"
                     className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
-                      pathname.includes('#') && 'bg-graydark dark:bg-meta-4'
+                      pathname.includes('RiskMap') &&
+                      'bg-graydark dark:bg-meta-4'
                     }`}
                   >
                     <div className="flex items-center text-sm gap-2 ml-2 mt-2 text-gray-200 hover:text-green-400">
