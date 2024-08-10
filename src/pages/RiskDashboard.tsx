@@ -24,13 +24,13 @@ const RiskDashboard: React.FC = () => {
         <div className="flex space-x-4">
           <Link
             to="/"
-            className="px-4 py-2 bg-black text-white dark:bg-slate-300 dark:text-black  rounded-md h-8 w-30 text-sm max-md:w-32 max-sm:text-[12px]"
+            className="px-4 py-2 bg-white dark:bg-boxdark hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black  rounded-md h-8 w-30 text-sm max-md:w-32 max-sm:text-[12px]"
           >
             Risk Register
           </Link>
           <Link
             to="/Risk/Dashboard"
-            className="px-4 py-2 bg-white dark:bg-boxdark hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black rounded-md h-8 w-40 text-sm max-md:w-32 max-sm:text-[12px]"
+            className="px-4 py-2  bg-black text-white dark:bg-slate-300 dark:text-black rounded-md h-8 w-40 text-sm max-md:w-32 max-sm:text-[12px]"
           >
             Risk Dashboard
           </Link>

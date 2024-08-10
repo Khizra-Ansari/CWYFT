@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import CustomNode from '../components/Charts/CustomNodes';
 
 import ReactFlow, {
@@ -611,7 +612,36 @@ const RiskMap: React.FC = () => {
         <h1 className="font-bold text-xl">Risk Map</h1>
       </div>
 
-      <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
+      <div className="flex items-center justify-between mt-4">
+        <div className="flex space-x-4">
+          <Link
+            to="/"
+            className="px-4 py-2 bg-white dark:bg-boxdark hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black rounded-md h-8 w-30 text-sm max-md:w-32 max-sm:text-[12px]"
+          >
+            Risk Register
+          </Link>
+          <Link
+            to="/Risk/Dashboard"
+            className="px-4 py-2 bg-white dark:bg-boxdark hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black rounded-md h-8 w-40 text-sm max-md:w-32 max-sm:text-[12px]"
+          >
+            Risk Dashboard
+          </Link>
+          <Link
+            to="/Risk/Map"
+            className="px-4 py-2 bg-black text-white dark:bg-slate-300 dark:text-black rounded-md h-8 w-30 text-sm max-md:w-32 max-sm:text-[12px]"
+          >
+            Risk Map
+          </Link>
+        </div>
+        <Link
+          to="/new-risk"
+          className="px-4 py-2 bg-white dark:bg-boxdark hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black rounded-md ml-auto h-8 w-30 text-sm max-md:w-32 max-sm:text-[12px]"
+        >
+          New Risk
+        </Link>
+      </div>
+
+      <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 mt-4">
         <div className="flex items-center bg-gray-200 rounded-md px-3 py-2 bg-white dark:bg-boxdark flex-1">
           <FontAwesomeIcon
             icon={faTriangleExclamation}
