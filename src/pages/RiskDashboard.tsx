@@ -20,34 +20,35 @@ const RiskDashboard: React.FC = () => {
         <h1 className="font-bold text-xl">Risk Management</h1>
       </div>
 
-      <div className="flex items-center justify-between mt-4">
-        <div className="flex space-x-4">
+      <div className="flex flex-col sm:flex-row sm:flex-wrap items-center justify-between mt-4">
+        <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2 sm:space-x-4 w-full sm:w-auto">
           <Link
             to="/"
-            className="px-4 py-2 bg-white dark:bg-boxdark hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black  rounded-md h-8 w-30 text-sm max-md:w-32 max-sm:text-[12px]"
+            className="px-4 py-2 bg-white dark:bg-boxdark hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black rounded-md text-sm w-full h-12 sm:w-auto sm:h-auto hover:bg-gray-800 dark:hover:bg-gray-200"
           >
             Risk Register
           </Link>
           <Link
             to="/Risk/Dashboard"
-            className="px-4 py-2  bg-black text-white dark:bg-slate-300 dark:text-black rounded-md h-8 w-40 text-sm max-md:w-32 max-sm:text-[12px]"
+            className="px-4 py-2 bg-black text-white dark:bg-slate-300 dark:text-black rounded-md text-sm w-full h-12 sm:w-auto sm:h-auto"
           >
             Risk Dashboard
           </Link>
           <Link
             to="/Risk/Map"
-            className="px-4 py-2 bg-white dark:bg-boxdark hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black rounded-md h-8 w-30 text-sm max-md:w-32 max-sm:text-[12px]"
+            className="px-4 py-2 bg-white dark:bg-boxdark hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black rounded-md text-sm w-full h-12 sm:w-auto sm:h-auto"
           >
             Risk Map
           </Link>
         </div>
         <Link
           to="/new-risk"
-          className="px-4 py-2 bg-white dark:bg-boxdark hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black rounded-md ml-auto h-8 w-30 text-sm max-md:w-32 max-sm:text-[12px]"
+          className="px-4 py-2 bg-white dark:bg-boxdark hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black rounded-md text-sm w-full h-12 sm:w-auto sm:h-auto mt-2 sm:mt-0"
         >
           New Risk
         </Link>
       </div>
+
       <div className="flex items-center gap-8 max-md:flex-wrap max-sm:gap-2 -mt-1">
         <select className=" h-7 w-44 dark:bg-boxdark text-sm max-md:w-32 max-sm:text-[12px] font-normal rounded-md px-2 text-gray-700 cursor-pointer mt-4 outline-none">
           <option>Risk Categories</option>

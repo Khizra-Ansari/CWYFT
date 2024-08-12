@@ -612,56 +612,52 @@ const RiskMap: React.FC = () => {
         <h1 className="font-bold text-xl">Risk Map</h1>
       </div>
 
-      <div className="flex items-center justify-between mt-4">
-        <div className="flex space-x-4">
+      <div className="flex flex-col sm:flex-row sm:flex-wrap items-center justify-between mt-4">
+        <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2 sm:space-x-4 w-full sm:w-auto">
           <Link
             to="/"
-            className="px-4 py-2 bg-white dark:bg-boxdark hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black rounded-md h-8 w-30 text-sm max-md:w-32 max-sm:text-[12px]"
+            className="px-4 py-2 bg-white dark:bg-boxdark hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black rounded-md text-sm w-full h-12 sm:w-auto sm:h-auto hover:bg-gray-800 dark:hover:bg-gray-200"
           >
             Risk Register
           </Link>
           <Link
             to="/Risk/Dashboard"
-            className="px-4 py-2 bg-white dark:bg-boxdark hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black rounded-md h-8 w-40 text-sm max-md:w-32 max-sm:text-[12px]"
+            className="px-4 py-2 bg-white dark:bg-boxdark hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black rounded-md text-sm w-full h-12 sm:w-auto sm:h-auto"
           >
             Risk Dashboard
           </Link>
           <Link
             to="/Risk/Map"
-            className="px-4 py-2 bg-black text-white dark:bg-slate-300 dark:text-black rounded-md h-8 w-30 text-sm max-md:w-32 max-sm:text-[12px]"
+            className="px-4 py-2 bg-black text-white dark:bg-slate-300 dark:text-black rounded-md text-sm w-full h-12 sm:w-auto sm:h-auto"
           >
             Risk Map
           </Link>
         </div>
         <Link
           to="/new-risk"
-          className="px-4 py-2 bg-white dark:bg-boxdark hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black rounded-md ml-auto h-8 w-30 text-sm max-md:w-32 max-sm:text-[12px]"
+          className="px-4 py-2 bg-white dark:bg-boxdark hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black rounded-md text-sm w-full h-12 sm:w-auto sm:h-auto mt-2 sm:mt-0"
         >
           New Risk
         </Link>
       </div>
 
-      <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 mt-4">
-        <div className="flex items-center bg-gray-200 rounded-md px-3 py-2 bg-white dark:bg-boxdark flex-1">
-          <FontAwesomeIcon
-            icon={faTriangleExclamation}
-            className="w-4 h-4 mr-2"
-          />
-          <div className="text-sm sm:text-base">
+      <div className="flex flex-col sm:flex-row sm:flex-wrap justify-between items-center w-full mt-4">
+        <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 w-full sm:w-auto">
+          <div className="flex items-center bg-gray-200 rounded-md px-3 py-2 bg-white dark:bg-boxdark w-full h-12 sm:w-auto sm:h-auto">
+            <FontAwesomeIcon
+              icon={faTriangleExclamation}
+              className="w-4 h-4 mr-2"
+            />
             <span className="font-medium mr-2">Breach Risk</span>
             <span className="font-bold">USD 150M</span>
           </div>
-        </div>
-        <div className="flex items-center bg-gray-200 rounded-md px-3 py-2 bg-white dark:bg-boxdark flex-1">
-          <FontAwesomeIcon icon={faClock} className="w-6 h-4 mr-2" />
-          <div className="text-sm sm:text-base">
+          <div className="flex items-center bg-gray-200 rounded-md px-3 py-2 bg-white dark:bg-boxdark w-full h-12 sm:w-auto sm:h-auto">
+            <FontAwesomeIcon icon={faClock} className="w-6 h-4 mr-2" />
             <span className="font-medium mr-2">Probability</span>
             <span className="font-bold">67%</span>
           </div>
-        </div>
-        <div className="flex items-center bg-gray-200 rounded-md px-3 py-2 bg-white dark:bg-boxdark flex-1">
-          <FontAwesomeIcon icon={faCubes} className="w-4 h-4 mr-2" />
-          <div className="text-sm sm:text-base">
+          <div className="flex items-center bg-gray-200 rounded-md px-3 py-2 bg-white dark:bg-boxdark w-full h-12 sm:w-auto sm:h-auto">
+            <FontAwesomeIcon icon={faCubes} className="w-4 h-4 mr-2" />
             <span className="font-medium mr-2">Analysed Assets</span>
             <span className="font-bold">67k</span>
           </div>
