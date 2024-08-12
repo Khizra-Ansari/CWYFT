@@ -6,6 +6,7 @@ import { IoDownloadOutline, IoSearchOutline } from 'react-icons/io5';
 import { FaGreaterThan, FaLessThan } from 'react-icons/fa6';
 import { IoIosArrowDropright } from 'react-icons/io';
 import { LuClock8 } from 'react-icons/lu';
+import { Link } from 'react-router-dom';
 import { FaUser } from 'react-icons/fa';
 import {
   faTriangleExclamation,
@@ -62,14 +63,43 @@ const RiskRegistry: React.FC = () => {
   }, []);
 
   return (
-    <>
+    <div className="w-full  mx-auto ">
       <div>
         <h1 className="font-bold text-xl">Risk Management</h1>
       </div>
 
-      <div className="flex justify-between items-center w-full">
-        <div className="flex space-x-4">
-          <div className="flex items-center bg-gray-200 rounded-md px-3 py-2 bg-white mt-4 dark:bg-boxdark">
+      <div className="flex flex-col sm:flex-row sm:flex-wrap items-center justify-between mt-4">
+        <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2 sm:space-x-4 w-full sm:w-auto">
+          <Link
+            to="/"
+            className="px-4 py-2 bg-black text-white dark:bg-slate-300 dark:text-black rounded-md text-sm w-full h-12 sm:w-auto sm:h-auto hover:bg-gray-800 dark:hover:bg-gray-200"
+          >
+            Risk Register
+          </Link>
+          <Link
+            to="/Risk/Dashboard"
+            className="px-4 py-2 bg-white dark:bg-boxdark hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black rounded-md text-sm w-full h-12 sm:w-auto sm:h-auto"
+          >
+            Risk Dashboard
+          </Link>
+          <Link
+            to="/Risk/Map"
+            className="px-4 py-2 bg-white dark:bg-boxdark hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black rounded-md text-sm w-full h-12 sm:w-auto sm:h-auto"
+          >
+            Risk Map
+          </Link>
+        </div>
+        <Link
+          to="/new-risk"
+          className="px-4 py-2 bg-white dark:bg-boxdark hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black rounded-md text-sm w-full h-12 sm:w-auto sm:h-auto mt-2 sm:mt-0"
+        >
+          New Risk
+        </Link>
+      </div>
+
+      <div className="flex flex-col sm:flex-row sm:flex-wrap justify-between items-center w-full mt-4">
+        <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 w-full sm:w-auto">
+          <div className="flex items-center bg-gray-200 rounded-md px-3 py-2 bg-white dark:bg-boxdark w-full h-12 sm:w-auto sm:h-auto">
             <FontAwesomeIcon
               icon={faTriangleExclamation}
               className="w-4 h-4 mr-2"
@@ -77,28 +107,23 @@ const RiskRegistry: React.FC = () => {
             <span className="font-medium mr-2">Breach Risk</span>
             <span className="font-bold">USD 150M</span>
           </div>
-          <div className="flex items-center bg-gray-200 rounded-md px-3 py-2 bg-white mt-4 dark:bg-boxdark">
+          <div className="flex items-center bg-gray-200 rounded-md px-3 py-2 bg-white dark:bg-boxdark w-full h-12 sm:w-auto sm:h-auto">
             <FontAwesomeIcon icon={faClock} className="w-6 h-4 mr-2" />
             <span className="font-medium mr-2">Probability</span>
             <span className="font-bold">67%</span>
           </div>
-          <div className="flex items-center bg-gray-200 rounded-md px-3 py-2 bg-white mt-4 dark:bg-boxdark">
+          <div className="flex items-center bg-gray-200 rounded-md px-3 py-2 bg-white dark:bg-boxdark w-full h-12 sm:w-auto sm:h-auto">
             <FontAwesomeIcon icon={faCubes} className="w-4 h-4 mr-2" />
             <span className="font-medium mr-2">Analysed Assets</span>
             <span className="font-bold">67k</span>
           </div>
         </div>
-        <div className="mt-4">
-          <button className=" bg-white dark:bg-boxdark hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black rounded-md font-medium w-30 px-4 py-2">
-            New Risk
-          </button>
-        </div>
       </div>
 
-      <div className="mt-4 grid grid-cols-12 gap-4">
+      <div className="mt-4 grid grid-cols-1 lg:grid-cols-12 gap-4">
         {/* First container - col-span-3 */}
-        <div className="col-span-12 lg:col-span-3">
-          <div className="col-span-12 rounded-sm border border-stroke bg-white dark:bg-boxdark px-4 sm:px-6 lg:px-8 pt-7.5 pb-5 shadow-default dark:border-strokedark h-[500px] sm:h-[600px] lg:h-[700px] relative">
+        <div className="col-span-1 lg:col-span-3">
+          <div className="rounded-sm border border-stroke bg-white dark:bg-boxdark px-4 sm:px-6 lg:px-8 pt-7.5 pb-5 shadow-default dark:border-strokedark h-[500px] sm:h-[600px] lg:h-[700px] relative overflow-y-auto">
             <div className="flex items-center col-span-12 h-[42px] w-full bg-black rounded-lg cursor-pointer absolute top-0 left-0 right-0">
               <HiOutlineAdjustmentsVertical className="text-white ml-2" />
               <span className="ml-10 text-white font-[300] text-[16px] text-opacity-90">
@@ -151,93 +176,82 @@ const RiskRegistry: React.FC = () => {
               <span className="text-[13px] font-medium cursor-pointer hover:text-green-500 hover:transition-all hover:duration-300">
                 Access Control
               </span>
-              <span className="text-[13px] font-medium cursor-pointer hover:text-green-500 hover:transition-all hover:duration-300">
-                Asset Management
-              </span>
-              <span className="text-[13px] font-medium cursor-pointer hover:text-green-500 hover:transition-all hover:duration-300">
-                Governance
-              </span>
-              <span className="text-[13px] font-medium cursor-pointer hover:text-green-500 hover:transition-all hover:duration-300">
-                Physical Access
-              </span>
+              <div className="border w-32 border-gray-300 mr-2"></div>
             </div>
           </div>
         </div>
 
         {/* Second container - col-span-9 */}
-        <div className="col-span-12 lg:col-span-9">
-          <div className="col-span-12 rounded-sm border border-stroke bg-white dark:bg-boxdark px-4 sm:px-6 lg:px-8 pt-7.5 pb-5 shadow-default dark:border-strokedark h-[500px] sm:h-[600px] lg:h-[700px] relative">
-            <div className="absolute top-0 left-0 right-0 flex items-center h-10 py-[22px] w-full gap-2 bg-black rounded-lg">
-              <div className="flex items-center ml-4">
-                <label className="custom-checkbox-container text-white cursor-pointer flex items-center font-normal text-sm">
+        <div className="col-span-1 lg:col-span-9">
+          <div className="rounded-sm border border-stroke bg-white dark:bg-boxdark px-4 sm:px-6 lg:px-8 pt-4 pb-4 shadow-default dark:border-strokedark h-[500px] sm:h-[600px] lg:h-[700px] relative overflow-y-auto">
+            <div className="flex items-center col-span-12 h-[42px] w-full bg-black rounded-lg cursor-pointer absolute top-0 left-0 right-0">
+              <div className="flex items-center ml-2 w-full">
+                <label className="custom-checkbox-container text-white cursor-pointer flex items-center font-normal text-sm sm:text-base lg:text-lg">
                   <input
                     type="checkbox"
                     onChange={handleSelectAll}
                     name="selectAll"
+                    className="mr-2 ml-2"
                   />
-
-                  <span className="custom-checkbox h-4 w-4 bg-black border border-black "></span>
-                  <span className="">Select All</span>
+                  <span className="custom-checkbox h-2  bg-black border border-none"></span>
+                  <span className="text-sm sm:text-base lg:text-lg font-light text-opacity-90">
+                    Select All
+                  </span>
                 </label>
               </div>
               <div className="flex items-center gap-2 ml-auto mr-4">
-                <div className="border border-gray-400 h-7 bg-gray-800 rounded-md w-[300px] flex items-center gap-2 text-white">
-                  <IoSearchOutline className="text-xl ml-2" />
+                <div className="border border-gray-400 h-6 bg-gray-800 rounded-md w-full sm:w-[200px] lg:w-[250px] flex items-center gap-2 text-white">
+                  <IoSearchOutline className="text-sm sm:text-base lg:text-lg ml-2" />
                   <input
                     type="text"
-                    className="w-full outline-none px-4 border-none bg-inherit h-4 text-[12px] font-light"
+                    className="w-full outline-none px-3 border-none bg-inherit h-8 text-xs sm:text-sm lg:text-base font-light"
                     placeholder="Search by Risk name or code"
                   />
                 </div>
                 <div className="text-white text-opacity-90 cursor-pointer hover:text-green-400">
-                  <IoDownloadOutline />
+                  <IoDownloadOutline className="text-base sm:text-lg lg:text-xl" />
                 </div>
               </div>
             </div>
-            <div className="absolute mt-7 left-0 right-0 flex items-center h-20 py-[22px] w-full gap-2 bg-slate-200 rounded-lg">
-              <div className="flex items-center justify-between pb-2">
-                <div className="flex items-center w-full ml-4">
-                  <label className="custom-checkbox-container text-white cursor-pointer flex mt-2 font-normal text-sm">
+
+            <div className="bg-slate-200 dark:bg-slate-500 dark:text-white rounded-lg p-4 mt-10">
+              <div className="flex flex-wrap items-center justify-between">
+                <div className="flex items-center w-full sm:w-auto mb-2 sm:mb-0">
+                  <label className="custom-checkbox-container cursor-pointer flex items-center font-normal text-sm">
                     <input
                       type="checkbox"
                       checked={checkboxes['box2']}
                       onChange={() => handleSingleCheck('box2')}
                     />
-                    <span className="custom-checkbox h-4 w-4 bg-gray-300 border-none border-gray-500 "></span>
+                    <span className="custom-checkbox h-4 w-4 bg-gray-300 border-none border-gray-500"></span>
                   </label>
-                  <IoIosArrowDropright className="mt-2" />
-                  <div className="flex flex-col gap-[4px] mt-3 ml-2 w-full">
-                    <span className=" font-semibold pb-1">
+                  <IoIosArrowDropright className="ml-2" />
+                  <div className="ml-2">
+                    <span className="font-semibold">
                       Unauthorised System Access
                     </span>
-                    <div className="flex gap-[6px]">
-                      <div className="h-5 w-16 rounded-lg bg-red-400 relative">
-                        <span className="text-[10px] absolute left-4 top-[2px]">
-                          CyD-4
-                        </span>
-                      </div>
-                      <div className="h-5 w-16 rounded-lg bg-teal-200 relative">
-                        <span className="text-[10px] absolute left-4 top-[2px]">
-                          CyD-5
-                        </span>
-                      </div>
-                      <div className="h-5 w-16 rounded-lg bg-red-400 relative">
-                        <span className="text-[10px] absolute left-4 top-[2px]">
-                          CyD-10
-                        </span>
-                      </div>
+                    <div className="flex flex-wrap gap-2 mt-1">
+                      <span className="text-[10px] bg-red-400 px-2 py-1 rounded">
+                        CyD-4
+                      </span>
+                      <span className="text-[10px] bg-teal-200 px-2 py-1 rounded">
+                        CyD-5
+                      </span>
+                      <span className="text-[10px] bg-red-400 px-2 py-1 rounded">
+                        CyD-10
+                      </span>
                     </div>
                   </div>
                 </div>
-                <div className="flex items-center gap-8 ml-22">
-                  <div className="flex items-center justify-center border-2 h-5 rounded-md text-sm border-yellow-400 w-7 text-yellow-400">
+                <div className="flex flex-wrap items-center gap-4 mt-2 sm:mt-0 w-full sm:w-auto justify-start sm:justify-end ml-15 sm:ml-0">
+                  <div className="border-2 h-5 rounded-md text-sm border-yellow-400 w-7 text-yellow-400 flex items-center justify-center">
                     15
                   </div>
-                  <div className="flex items-center justify-center border-2 h-5 rounded-md text-sm border-gray-500 w-7 text-gray-500">
+                  <div className="border-2 h-5 rounded-md text-sm border-gray-500 w-7 text-gray-500 flex items-center justify-center">
                     -
                   </div>
-                  <div className="flex gap-2 items-center justify-center border-2 h-7 rounded-md text-sm border-red-400 w-24 text-red-400 mr-4">
-                    <div className="h-3 w-3 rounded-full bg-red-400"></div>
+                  <div className="flex items-center justify-center border-2 h-7 rounded-md text-sm border-red-400 w-24 text-red-400">
+                    <div className="h-3 w-3 rounded-full bg-red-400 mr-1"></div>
                     <span>Transfer</span>
                   </div>
                   <div className="text-green-500 cursor-pointer">
@@ -246,154 +260,43 @@ const RiskRegistry: React.FC = () => {
                 </div>
               </div>
             </div>
-            <div className="absolute top-35 mt-3 pb-10 left-0 right-0 flex items-center h-20 py-[22px] w-full gap-2 bg-slate-200 rounded-lg">
-              <div className="flex items-center justify-between pb-2">
-                <div className="flex items-center w-full ml-4">
-                  <label className="custom-checkbox-container text-white cursor-pointer flex mt-2 font-normal text-sm">
+
+            <div className="bg-slate-200 dark:bg-slate-500 dark:text-white rounded-lg p-4 mt-4">
+              <div className="flex flex-wrap items-center justify-between">
+                <div className="flex items-center w-full sm:w-auto mb-2 sm:mb-0">
+                  <label className="custom-checkbox-container cursor-pointer flex items-center font-normal text-sm">
                     <input
                       type="checkbox"
-                      checked={checkboxes['box2']}
-                      onChange={() => handleSingleCheck('box2')}
+                      checked={checkboxes['box3']}
+                      onChange={() => handleSingleCheck('box3')}
                     />
-                    <span className="custom-checkbox h-4 w-4 bg-gray-300 border-none border-gray-500 "></span>
+                    <span className="custom-checkbox h-4 w-4 bg-gray-300 border-none border-gray-500"></span>
                   </label>
-                  <IoIosArrowDropright className="mt-2" />
-                  <div className="flex flex-col gap-[4px] mt-3 ml-2 w-full">
-                    <span className=" font-semibold pb-1">
-                      Weak Authentication
-                    </span>
-                    <div className="flex gap-[6px]">
-                      <div className="h-5 w-16 rounded-lg bg-red-400 relative">
-                        <span className="text-[10px] absolute left-4 top-[2px]">
-                          CyD-4
-                        </span>
-                      </div>
-                      <div className="h-5 w-16 rounded-lg bg-teal-200 relative">
-                        <span className="text-[10px] absolute left-4 top-[2px]">
-                          CyD-5
-                        </span>
-                      </div>
-                      <div className="h-5 w-16 rounded-lg bg-red-400 relative">
-                        <span className="text-[10px] absolute left-4 top-[2px]">
-                          CyD-10
-                        </span>
-                      </div>
+                  <IoIosArrowDropright className="ml-2" />
+                  <div className="ml-2">
+                    <span className="font-semibold">Weak Authentication</span>
+                    <div className="flex flex-wrap gap-2 mt-1">
+                      <span className="text-[10px] bg-red-400 px-2 py-1 rounded">
+                        CyD-4
+                      </span>
+                      <span className="text-[10px] bg-teal-200 px-2 py-1 rounded">
+                        CyD-5
+                      </span>
+                      <span className="text-[10px] bg-red-400 px-2 py-1 rounded">
+                        CyD-10
+                      </span>
                     </div>
                   </div>
                 </div>
-                <div className="flex items-center gap-8 ml-24">
-                  <div className="flex items-center justify-center border-2 h-5 rounded-md text-sm border-yellow-400 w-7 text-yellow-400">
-                    15
+                <div className="flex flex-wrap items-center gap-4 mt-2 sm:mt-0 w-full sm:w-auto justify-start sm:justify-end ml-15 sm:ml-0">
+                  <div className="border-2 h-5 rounded-md text-sm border-yellow-400 w-7 text-yellow-400 flex items-center justify-center">
+                    20
                   </div>
-                  <div className="flex items-center justify-center border-2 h-5 rounded-md text-sm border-gray-500 w-7 text-gray-500">
-                    -
+                  <div className="border-2 h-5 rounded-md text-sm border-gray-500 w-7 text-gray-500 flex items-center justify-center">
+                    5
                   </div>
-                  <div className="flex gap-2 items-center justify-center border-2 h-7 rounded-md text-sm border-red-400 w-24 text-red-400 mr-4">
-                    <div className="h-3 w-3 rounded-full bg-red-400"></div>
-                    <span>Transfer</span>
-                  </div>
-                  <div className="text-green-500 cursor-pointer">
-                    <FaUser />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="absolute top-60 mt-2 left-0 right-0 flex items-center h-20 py-[22px] w-full gap-2 bg-slate-200 rounded-lg">
-              <div className="flex items-center justify-between pb-2">
-                <div className="flex items-center w-full ml-4">
-                  <label className="custom-checkbox-container text-white cursor-pointer flex mt-2 font-normal text-sm">
-                    <input
-                      type="checkbox"
-                      checked={checkboxes['box2']}
-                      onChange={() => handleSingleCheck('box2')}
-                    />
-                    <span className="custom-checkbox h-4 w-4 bg-gray-300 border-none border-gray-500 "></span>
-                  </label>
-                  <IoIosArrowDropright className="mt-2" />
-                  <div className="flex flex-col gap-[4px] mt-3 ml-2 w-full">
-                    <span className=" font-semibold pb-1">
-                      Critical Svstem Dependencies
-                    </span>
-                    <div className="flex gap-[6px]">
-                      <div className="h-5 w-16 rounded-lg bg-red-400 relative">
-                        <span className="text-[10px] absolute left-4 top-[2px]">
-                          CyD-4
-                        </span>
-                      </div>
-                      <div className="h-5 w-16 rounded-lg bg-teal-200 relative">
-                        <span className="text-[10px] absolute left-4 top-[2px]">
-                          CyD-5
-                        </span>
-                      </div>
-                      <div className="h-5 w-16 rounded-lg bg-red-400 relative">
-                        <span className="text-[10px] absolute left-4 top-[2px]">
-                          CyD-10
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex items-center gap-8 ml-20">
-                  <div className="flex items-center justify-center border-2 h-5 rounded-md text-sm border-yellow-400 w-7 text-yellow-400">
-                    15
-                  </div>
-                  <div className="flex items-center justify-center border-2 h-5 rounded-md text-sm border-gray-500 w-7 text-gray-500">
-                    -
-                  </div>
-                  <div className="flex gap-2 items-center justify-center border-2 h-7 rounded-md text-sm border-red-400 w-24 text-red-400 mr-4">
-                    <div className="h-3 w-3 rounded-full bg-red-400"></div>
-                    <span>Accept</span>
-                  </div>
-                  <div className="text-green-500 cursor-pointer">
-                    <FaUser />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="absolute top-80 mt-6 left-0 right-0 flex items-center h-20 py-[22px] w-full gap-2 bg-slate-200 rounded-lg">
-              <div className="flex items-center justify-between pb-2">
-                <div className="flex items-center w-full ml-4">
-                  <label className="custom-checkbox-container text-white cursor-pointer flex mt-2 font-normal text-sm">
-                    <input
-                      type="checkbox"
-                      checked={checkboxes['box2']}
-                      onChange={() => handleSingleCheck('box2')}
-                    />
-                    <span className="custom-checkbox h-4 w-4 bg-gray-300 border-none border-gray-500 "></span>
-                  </label>
-                  <IoIosArrowDropright className="mt-2" />
-                  <div className="flex flex-col gap-[4px] mt-3 ml-2 w-full">
-                    <span className=" font-semibold pb-1">
-                      Exposure - Zero-day Attack
-                    </span>
-                    <div className="flex gap-[6px]">
-                      <div className="h-5 w-16 rounded-lg bg-red-400 relative">
-                        <span className="text-[10px] absolute left-4 top-[2px]">
-                          CyD-4
-                        </span>
-                      </div>
-                      <div className="h-5 w-16 rounded-lg bg-teal-200 relative">
-                        <span className="text-[10px] absolute left-4 top-[2px]">
-                          CyD-5
-                        </span>
-                      </div>
-                      <div className="h-5 w-16 rounded-lg bg-red-400 relative">
-                        <span className="text-[10px] absolute left-4 top-[2px]">
-                          CyD-10
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex items-center gap-8 ml-24">
-                  <div className="flex items-center justify-center border-2 h-5 rounded-md text-sm border-yellow-400 w-7 text-yellow-400">
-                    15
-                  </div>
-                  <div className="flex items-center justify-center border-2 h-5 rounded-md text-sm border-gray-500 w-7 text-gray-500">
-                    -
-                  </div>
-                  <div className="flex gap-2 items-center justify-center border-2 h-7 rounded-md text-sm border-red-400 w-24 text-red-400 mr-4">
-                    <div className="h-3 w-3 rounded-full bg-red-400"></div>
+                  <div className="flex items-center justify-center border-2 h-7 rounded-md text-sm border-yellow-400 w-24 text-yellow-400">
+                    <div className="h-3 w-3 rounded-full bg-yellow-300 mr-1"></div>
                     <span>Mitigate</span>
                   </div>
                   <div className="text-green-500 cursor-pointer">
@@ -402,50 +305,139 @@ const RiskRegistry: React.FC = () => {
                 </div>
               </div>
             </div>
-            <div className="absolute top-90 mt-20 left-0 right-0 flex items-center  h-20 py-[22px] w-full gap-2 bg-slate-200 rounded-lg">
-              <div className="flex items-center justify-between pb-2">
-                <div className="flex items-center w-full ml-4">
-                  <label className="custom-checkbox-container text-white cursor-pointer flex mt-2 font-normal text-sm">
+
+            <div className="bg-slate-200 dark:bg-slate-500 dark:text-white rounded-lg p-4 mt-4">
+              <div className="flex flex-wrap items-center justify-between">
+                <div className="flex items-center w-full sm:w-auto mb-2 sm:mb-0">
+                  <label className="custom-checkbox-container cursor-pointer flex items-center font-normal text-sm">
                     <input
                       type="checkbox"
-                      checked={checkboxes['box2']}
-                      onChange={() => handleSingleCheck('box2')}
+                      checked={checkboxes['box4']}
+                      onChange={() => handleSingleCheck('box4')}
                     />
-                    <span className="custom-checkbox h-4 w-4 bg-gray-300 border-none border-gray-500 "></span>
+                    <span className="custom-checkbox h-4 w-4 bg-gray-300 border-none border-gray-500"></span>
                   </label>
-                  <IoIosArrowDropright className="mt-2" />
-                  <div className="flex flex-col gap-[4px] mt-3 ml-2 w-full">
-                    <span className=" font-semibold pb-1">
+                  <IoIosArrowDropright className="ml-2" />
+                  <div className="ml-2">
+                    <span className="font-semibold">
+                      Critical System Dependencies - DoS
+                    </span>
+                    <div className="flex flex-wrap gap-2 mt-1">
+                      <span className="text-[10px] bg-red-400 px-2 py-1 rounded">
+                        CyD-4
+                      </span>
+                      <span className="text-[10px] bg-teal-200 px-2 py-1 rounded">
+                        CyD-5
+                      </span>
+                      <span className="text-[10px] bg-red-400 px-2 py-1 rounded">
+                        CyD-10
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex flex-wrap items-center gap-4 mt-2 sm:mt-0 w-full sm:w-auto justify-start sm:justify-end ml-15 sm:ml-0">
+                  <div className="border-2 h-5 rounded-md text-sm border-yellow-400 w-7 text-yellow-400 flex items-center justify-center">
+                    20
+                  </div>
+                  <div className="border-2 h-5 rounded-md text-sm border-gray-500 w-7 text-gray-500 flex items-center justify-center">
+                    5
+                  </div>
+                  <div className="flex items-center justify-center border-2 h-7 rounded-md text-sm border-green-500 w-24 text-green-500">
+                    <div className="h-3 w-3 rounded-full bg-green-500 mr-1"></div>
+                    <span>Accept</span>
+                  </div>
+                  <div className="text-green-500 cursor-pointer">
+                    <FaUser />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-slate-200 dark:bg-slate-500 dark:text-white rounded-lg p-4 mt-4">
+              <div className="flex flex-wrap items-center justify-between">
+                <div className="flex items-center w-full sm:w-auto mb-2 sm:mb-0">
+                  <label className="custom-checkbox-container cursor-pointer flex items-center font-normal text-sm">
+                    <input
+                      type="checkbox"
+                      checked={checkboxes['box5']}
+                      onChange={() => handleSingleCheck('box5')}
+                    />
+                    <span className="custom-checkbox h-4 w-4 bg-gray-300 border-none border-gray-500"></span>
+                  </label>
+                  <IoIosArrowDropright className="ml-2" />
+                  <div className="ml-2">
+                    <span className="font-semibold">
+                      Exposure - Zero-day Attack
+                    </span>
+                    <div className="flex flex-wrap gap-2 mt-1">
+                      <span className="text-[10px] bg-red-400 px-2 py-1 rounded">
+                        CyD-4
+                      </span>
+                      <span className="text-[10px] bg-teal-200 px-2 py-1 rounded">
+                        CyD-5
+                      </span>
+                      <span className="text-[10px] bg-red-400 px-2 py-1 rounded">
+                        CyD-10
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex flex-wrap items-center gap-4 mt-2 sm:mt-0 w-full sm:w-auto justify-start sm:justify-end ml-15 sm:ml-0">
+                  <div className="border-2 h-5 rounded-md text-sm border-yellow-400 w-7 text-yellow-400 flex items-center justify-center">
+                    20
+                  </div>
+                  <div className="border-2 h-5 rounded-md text-sm border-gray-500 w-7 text-gray-500 flex items-center justify-center">
+                    5
+                  </div>
+                  <div className="flex items-center justify-center border-2 h-7 rounded-md text-sm border-red-400 w-24 text-red-400">
+                    <div className="h-3 w-3 rounded-full bg-red-400 mr-1"></div>
+                    <span>Transfer</span>
+                  </div>
+                  <div className="text-green-500 cursor-pointer">
+                    <FaUser />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-slate-200 dark:bg-slate-500 dark:text-white rounded-lg p-4 mt-4">
+              <div className="flex flex-wrap items-center justify-between">
+                <div className="flex items-center w-full sm:w-auto mb-2 sm:mb-0">
+                  <label className="custom-checkbox-container cursor-pointer flex items-center font-normal text-sm">
+                    <input
+                      type="checkbox"
+                      checked={checkboxes['box6']}
+                      onChange={() => handleSingleCheck('box6')}
+                    />
+                    <span className="custom-checkbox h-4 w-4 bg-gray-300 border-none border-gray-500"></span>
+                  </label>
+                  <IoIosArrowDropright className="ml-2" />
+                  <div className="ml-2">
+                    <span className="font-semibold">
                       Physical Security - Theft
                     </span>
-                    <div className="flex gap-[6px]">
-                      <div className="h-5 w-16 rounded-lg bg-red-400 relative">
-                        <span className="text-[10px] absolute left-4 top-[2px]">
-                          CyD-4
-                        </span>
-                      </div>
-                      <div className="h-5 w-16 rounded-lg bg-teal-200 relative">
-                        <span className="text-[10px] absolute left-4 top-[2px]">
-                          CyD-5
-                        </span>
-                      </div>
-                      <div className="h-5 w-16 rounded-lg bg-red-400 relative">
-                        <span className="text-[10px] absolute left-4 top-[2px]">
-                          CyD-10
-                        </span>
-                      </div>
+                    <div className="flex flex-wrap gap-2 mt-1">
+                      <span className="text-[10px] bg-red-400 px-2 py-1 rounded">
+                        CyD-4
+                      </span>
+                      <span className="text-[10px] bg-teal-200 px-2 py-1 rounded">
+                        CyD-5
+                      </span>
+                      <span className="text-[10px] bg-red-400 px-2 py-1 rounded">
+                        CyD-10
+                      </span>
                     </div>
                   </div>
                 </div>
-                <div className="flex items-center gap-8 ml-24">
-                  <div className="flex items-center justify-center border-2 h-5 rounded-md text-sm border-yellow-400 w-7 text-yellow-400">
-                    15
+                <div className="flex items-center gap-4 mt-2 sm:mt-0 w-full sm:w-auto justify-start sm:justify-end ml-15 sm:ml-0">
+                  <div className="border-2 h-5 rounded-md text-sm border-yellow-400 w-7 text-yellow-400 flex items-center justify-center">
+                    20
                   </div>
-                  <div className="flex items-center justify-center border-2 h-5 rounded-md text-sm border-gray-500 w-7 text-gray-500">
-                    -
+                  <div className="border-2 h-5 rounded-md text-sm border-gray-500 w-7 text-gray-500 flex items-center justify-center">
+                    5
                   </div>
-                  <div className="flex gap-2 items-center justify-center border-2 h-7 rounded-md text-sm border-red-400 w-24 text-red-400 mr-4">
-                    <div className="h-3 w-3 rounded-full bg-red-400"></div>
+                  <div className="flex items-center justify-center border-2 h-7 rounded-md text-sm border-red-400 w-24 text-red-400">
+                    <div className="h-3 w-3 rounded-full bg-red-400 mr-1"></div>
                     <span>Transfer</span>
                   </div>
                   <div className="text-green-500 cursor-pointer">
@@ -454,101 +446,28 @@ const RiskRegistry: React.FC = () => {
                 </div>
               </div>
             </div>
-            <div className="absolute top-100 mt-34 left-0 right-0 flex items-center h-20 py-[22px] w-full gap-2 bg-slate-200 rounded-lg">
-              <div className="flex items-center justify-between pb-2">
-                <div className="flex items-center w-full ml-4">
-                  <label className="custom-checkbox-container text-white cursor-pointer flex mt-2 font-normal text-sm">
-                    <input
-                      type="checkbox"
-                      checked={checkboxes['box2']}
-                      onChange={() => handleSingleCheck('box2')}
-                    />
-                    <span className="custom-checkbox h-4 w-4 bg-gray-300 border-none border-gray-500 "></span>
-                  </label>
-                  <IoIosArrowDropright className="mt-2" />
-                  <div className="flex flex-col gap-[4px] mt-3 ml-2 w-full">
-                    <span className=" font-semibold pb-1">
-                      Risky Software Supply Chain
-                    </span>
-                    <div className="flex gap-[6px]">
-                      <div className="h-5 w-16 rounded-lg bg-red-400 relative">
-                        <span className="text-[10px] absolute left-4 top-[2px]">
-                          CyD-4
-                        </span>
-                      </div>
-                      <div className="h-5 w-16 rounded-lg bg-teal-200 relative">
-                        <span className="text-[10px] absolute left-4 top-[2px]">
-                          CyD-5
-                        </span>
-                      </div>
-                      <div className="h-5 w-16 rounded-lg bg-red-400 relative">
-                        <span className="text-[10px] absolute left-4 top-[2px]">
-                          CyD-10
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex items-center gap-8 ml-22">
-                  <div className="flex items-center justify-center border-2 h-5 rounded-md text-sm border-yellow-400 w-7 text-yellow-400">
-                    15
-                  </div>
-                  <div className="flex items-center justify-center border-2 h-5 rounded-md text-sm border-gray-500 w-7 text-gray-500">
-                    -
-                  </div>
-                  <div className="flex gap-2 items-center justify-center border-2 h-7 rounded-md text-sm border-red-400 w-24 text-red-400 mr-4">
-                    <div className="h-3 w-3 rounded-full bg-red-400"></div>
-                    <span>Transfer</span>
-                  </div>
-                  <div className="text-green-500 cursor-pointer">
-                    <FaUser />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="absolute top-100 right-0 mt-60 w-full flex items-center justify-between">
-              {/* Left-aligned "8/page" */}
-              <div className="h-3 w-5 ml-10 rounded-lg text-gray-400 bg-white text-[12px] text-center flex items-center justify-center cursor-pointer">
-                <span>8/page</span>
-              </div>
 
-              {/* Right-aligned pagination controls */}
-              <div className="flex gap-1 mr-8">
-                <div className="h-3 w-5 rounded-md bg-white text-[10px] flex items-center justify-center cursor-pointer">
-                  <FaLessThan className="ml-1" />
-                  <FaLessThan className="mr-[6px]" />
-                </div>
-                <div className="h-3 w-5 rounded-md bg-white text-[10px] flex items-center justify-center cursor-pointer">
+            <div className="flex flex-wrap items-center justify-between mt-6">
+              <span className="text-sm text-gray-500">8/page</span>
+              <div className="flex items-center gap-2">
+                <button className="p-1 rounded hover:bg-gray-200">
                   <FaLessThan />
-                </div>
-                <div className="h-3 w-5 rounded-md bg-white cursor-pointer text-[10px] flex items-center justify-center bg-gray-900">
-                  1
-                </div>
-                <div className="h-3 w-5 rounded-md bg-white text-[10px] flex items-center justify-center cursor-pointer">
-                  2
-                </div>
-                <div className="h-3 w-5 rounded-md bg-white text-[10px] flex items-center justify-center cursor-pointer">
-                  3
-                </div>
-                <div className="h-3 w-5 rounded-md bg-white text-[22px] flex items-center justify-center cursor-pointer">
-                  ...
-                </div>
-                <div className="h-3 w-5 rounded-md bg-white text-[10px] flex items-center justify-center cursor-pointer">
-                  10
-                </div>
-                <div className="h-3 w-5 rounded-md bg-white text-[10px] flex items-center justify-center cursor-pointer">
+                </button>
+
+                <button className="p-1 rounded bg-gray-900 ">1</button>
+                <button className="p-1 rounded hover:bg-gray-200">2</button>
+                <button className="p-1 rounded hover:bg-gray-200">3</button>
+                <span>...</span>
+                <button className="p-1 rounded hover:bg-gray-200">10</button>
+                <button className="p-1 rounded hover:bg-gray-200">
                   <FaGreaterThan />
-                </div>
-                <div className="h-3 w-5 rounded-md bg-white text-[10px] flex items-center justify-center cursor-pointer">
-                  <FaGreaterThan className="ml-1" />
-                  <FaGreaterThan className="mr-[6px]" />
-                </div>
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
